@@ -1,10 +1,15 @@
 class Block
 {
-  float startX = 0;
-  float startY = 0;
-  float blockSize = 30;
+  float startX;
+  float startY;
+  float blockSize;
   
-  
+  Block()
+  {
+    startX = 0;
+    startY = 0;
+    bloackSize = 30;
+  }
   void render()
   {
     fill(255,0,0);
