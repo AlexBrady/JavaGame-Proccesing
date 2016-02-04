@@ -1,17 +1,18 @@
-/*class Block
+class Block
 {
   PVector pos;
-  float blockSize;
-  float speed;
+  float blockSize = 30;
+  float speed = 4;
   
   Block()
   {
     this(0,0);
   }
   
-  Block(float startX, float startY)
+  Block(float x, float y)
   {
-    pos = new PVector(startX,startY);
+    pos = new PVector(x,y);
+
   }
   
   void render()
@@ -19,7 +20,7 @@
     fill(255,0,0);
     stroke(0);
     strokeWeight(4);
-    rect(pos.startX,pos.startY,blockSize,blockSize);
+    rect(pos.x,pos.y,blockSize,blockSize);
 
   }
   void move()
@@ -28,20 +29,20 @@
     {
       if(key == 'w')
       {
-        pos.startY = pos.startY -speed;
+        pos.y = pos.y - speed;
       }
       if(key == 'a')
       {
-        pos.startX = pos.startX - speed;
+        pos.x = pos.x - speed;
       }
       if(key == 's')
       {
-        pos.startY = pos.startY + speed;
+        pos.y = pos.y + speed;
       }
       if(key == 'd')
       {
-        pos.startY = pos.startY + speed;
+        pos.x = pos.x + speed;
       }
     }
   }
-}*/
+}

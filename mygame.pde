@@ -5,27 +5,29 @@ void setup()
   smooth();
   
   menu = new Menu();
-  //block = new Block();
+  block = new Block();
   mobs = new Mobs();
 }
 
 
 Menu menu;
-//Block block;
+Block block;
 Mobs mobs;
 
 int size = 30;
 float posMobY = 105;
-//float posMobX = 
 
 
 void draw()
 {
   //menu.displayMenu();
   //menu.displayArrow();
+  
   drawBackground();
-  //block.render();
-  //block.move();
+  
+  block.render();
+  block.move();
+  
   mobs.drawMobsY(posMobY);
   mobs.drawMobsY(posMobY + size*4);
   mobs.drawMobsY(posMobY + size*4*2);

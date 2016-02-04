@@ -8,19 +8,21 @@ class Mobs
   void drawMobsY(float x)
   {
     fill(0,0,255);
+    strokeWeight(1);
     
-      ellipse(x,y,radius,radius);
-      y = y + speed;
-      if(y >= height || y <= 0)
-      {
-        speed = speed * -1;
-      }
+    ellipse(x,y,radius,radius);
+    y = y + speed;
+    if(y >= height || y <= 0)
+    {
+      speed = speed * -1;
+    }
     
   }
   
   void drawMobsX(float y)
   {
     fill(0,0,255);
+    strokeWeight(1);
     
     ellipse(x1,y,radius,radius);
     x1 = x1 + speed;
