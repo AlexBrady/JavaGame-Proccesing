@@ -1,19 +1,5 @@
-class Block
+class Block extends GameObject
 {
-  PVector pos;
-  float blockSize = 30;
-  float speed = 4;
-  
-  Block()
-  {
-    this(0,0);
-  }
-  
-  Block(float x, float y)
-  {
-    pos = new PVector(x,y);
-
-  }
   
   void render()
   {
