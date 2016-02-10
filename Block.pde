@@ -1,6 +1,6 @@
 class Block extends GameObject
 {
-  
+  //declare user variables(w,a,s,d)
   char up;
   char left;
   char down;
@@ -21,13 +21,13 @@ class Block extends GameObject
     fill(255,0,0);
     stroke(0);
     strokeWeight(3);
-    rect(pos.x,pos.y,blockSize,blockSize);
+    rect(pos.x,pos.y,blockSize,blockSize);//draw the user block
     
     fill(255,215,0);
     textSize(25);
-    text("Coins = "+ points, width * 0.69, 25);
+    text("Coins = "+ points, width * 0.69, 25);//coin counter
   }
-  void update()
+  void update()//User movement
   {
       if(keys[up])
       {
@@ -45,7 +45,7 @@ class Block extends GameObject
       {
         pos.x = pos.x + speed;
       }
-      
+      //If the block hits the edge of the screen it loops around to the opposite side
       if (pos.x < 0)
     {
       pos.x = width;

@@ -1,13 +1,14 @@
+/* C14393571 Assignment 2 Alex Brady */
 
 void setup()
 {
   size(600,600);
   smooth();
   
-  menu = new Menu();
-  block = new Block('W','A','S','D');
+  menu = new Menu();//Main Menu
+  block = new Block('W','A','S','D');//User controlled Block
   gameObjects.add(block);
-  mobs = new Mobs(105,15,60);
+  mobs = new Mobs(105,15,60);//Mobs who kill you
   gameObjects.add(mobs);
   mobs = new Mobs(225,15,60);
   gameObjects.add(mobs);
@@ -30,7 +31,7 @@ ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[525];
 
 int screen = 0;
-
+//For improved block movement
 void keyPressed()
 {
   keys[keyCode] = true;
@@ -52,14 +53,14 @@ void draw()
 {
   if( screen == 0 )
   {
-    menu.displayMenu();
+    menu.displayMenu();//displays menu as default
   }
   if( screen == 1 )
   {
-    drawBackground();
+    drawBackground();//draws the background
   
   
-    if(frameCount % 60 == 0)
+    if(frameCount % 60 == 0)//Add a coin every second to the map
     {
       GameObject coins = new Coins();
       gameObjects.add(coins);
@@ -78,9 +79,22 @@ void draw()
     checkCollisions();
   }
   
+  if( screen == 2 )//Death screen !!!!
+  {
+    background(255);
+    text("Game Over !", width / 2, height / 2);
+    text("Your score was : " + block.points, width / 2, (height / 2) + 30);
+    textSize(20);
+    text("Click the mouse to go back to the main menu",width / 2,height / 2 + 60);
+    if( mousePressed )
+    {
+      screen = 0;
+    }
+  }
+  
 }
 
-void checkCollisions()
+void checkCollisions()//Check the block hiting the coins
 {
  for(int i = gameObjects.size() - 1 ; i >= 0   ;i --)
  {
@@ -99,12 +113,12 @@ void checkCollisions()
           }
         }
         
-        
+        //Check block hitting mobs
         if(other instanceof Mobs)
         {
           if(go.pos.dist(other.mpos) < go.w + other.halfW)
           {
-            println("DEAD");
+            screen = 2;
           }
         }
         
@@ -112,7 +126,7 @@ void checkCollisions()
         {
           if(go.pos.dist(other.mpos2) < go.w + other.halfW)
           {
-            println("dead");
+            screen = 2;
           }
         }
       }
@@ -120,7 +134,7 @@ void checkCollisions()
  } 
 }
 
-void drawBackground()
+void drawBackground()//draws the pretty background
 {
   strokeWeight(1);
   

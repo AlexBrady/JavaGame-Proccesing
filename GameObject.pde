@@ -1,9 +1,10 @@
 abstract class GameObject
 {
-  PVector pos;
-  PVector cpos;
-  PVector mpos;
-  PVector mpos2;
+  //delcare variables
+  PVector pos;//block coordinates
+  PVector cpos;//coin coordinates
+  PVector mpos;//mobs coordinates
+  PVector mpos2;//mobs coordinates
   float blockSize = 30;
   int points = 0;
   float speed = 4;
@@ -12,7 +13,7 @@ abstract class GameObject
   
   GameObject()
   {
-    this(0,0,30);
+    this(0,0,30);//block coordinates
   }
   
   GameObject(float x, float y, float w)

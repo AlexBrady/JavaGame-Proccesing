@@ -1,3 +1,4 @@
+//this class is the same as Mobs just for the mobs moving side to side
 class MobsY extends GameObject
 {
   int speed = 5;
@@ -5,14 +6,6 @@ class MobsY extends GameObject
   MobsY(float x, float y, float scale)
   {
     super(x,y,scale);
-  }
-  
-  void applyTo(Block block)
-  {
-    background(0);
-    fill(0,0,255);
-    text("Game over",width/2,height/2);
-    text("Points = "+points,width/2,height/2+30);
   }
   
   void render()
