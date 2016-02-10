@@ -1,9 +1,14 @@
-class Coins extends GameObject
+class Coins extends GameObject implements Pickup
 {
   
   Coins()
   {
     super(random(0,width), random(0,height),20);
+  }
+  
+  void applyTo(Block block)
+  {
+    block.points ++;
   }
   
   void render()
@@ -21,3 +26,4 @@ class Coins extends GameObject
   }
   
 }
+

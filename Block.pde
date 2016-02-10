@@ -1,7 +1,6 @@
 class Block extends GameObject
 {
   
-<<<<<<< HEAD
   char up;
   char left;
   char down;
@@ -17,13 +16,10 @@ class Block extends GameObject
     this.right = right;
   }
   
-=======
->>>>>>> f9383e2830eb7a3ebb165599e331b70aab3db601
   void render()
   {
     fill(255,0,0);
     stroke(0);
-<<<<<<< HEAD
     strokeWeight(3);
     rect(pos.x,pos.y,blockSize,blockSize);
     
@@ -68,32 +64,6 @@ class Block extends GameObject
     if (pos.y > height)
     {
       pos.y = 0;
-=======
-    strokeWeight(4);
-    rect(pos.x,pos.y,blockSize,blockSize);
-
-  }
-  void move()
-  {
-    if(keyPressed)
-    {
-      if(key == 'w')
-      {
-        pos.y = pos.y - speed;
-      }
-      if(key == 'a')
-      {
-        pos.x = pos.x - speed;
-      }
-      if(key == 's')
-      {
-        pos.y = pos.y + speed;
-      }
-      if(key == 'd')
-      {
-        pos.x = pos.x + speed;
-      }
->>>>>>> f9383e2830eb7a3ebb165599e331b70aab3db601
     }
   }
 }
