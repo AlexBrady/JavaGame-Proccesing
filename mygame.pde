@@ -116,16 +116,18 @@ void checkCollisions()//Check the block hiting the coins
         //Check block hitting mobs
         if(other instanceof Mobs)
         {
-          if(go.pos.dist(other.mpos) < go.w + other.halfW)
+          if(go.pos.dist(other.mpos) < go.k + other.halfW-7)
           {
+            block.points = 0;
             screen = 2;
           }
         }
         
         if(other instanceof MobsY)
         {
-          if(go.pos.dist(other.mpos2) < go.w + other.halfW)
+          if(go.pos.dist(other.mpos2) < go.k + other.halfW-7)
           {
+            block.points = 0;
             screen = 2;
           }
         }

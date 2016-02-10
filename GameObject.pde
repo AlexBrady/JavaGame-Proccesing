@@ -9,6 +9,7 @@ abstract class GameObject
   int points = 0;
   float speed = 4;
   float w;
+  float k;
   float halfW;
   
   GameObject()
@@ -23,6 +24,7 @@ abstract class GameObject
     mpos = new PVector(x,y);
     mpos2 = new PVector(x,y);
     this.w = w;
+    this.k = k;
     this.halfW = w * 0.5f;
   }
   
