@@ -13,6 +13,10 @@ class Menu
   float y2 = menuTextY*2;
   float x3 = menuTextX*0.7;
   float y3 = menuTextY*2-tempsize/2;
+<<<<<<< HEAD
+=======
+  // constructors
+>>>>>>> f9383e2830eb7a3ebb165599e331b70aab3db601
   
   
   
