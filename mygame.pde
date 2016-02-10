@@ -53,7 +53,6 @@ void draw()
   if( screen == 0 )
   {
     menu.displayMenu();
-    menu.displayArrow();
   }
   if( screen == 1 )
   {
