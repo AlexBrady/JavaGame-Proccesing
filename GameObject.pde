@@ -1,10 +1,12 @@
 abstract class GameObject
 {
   PVector pos;
+  PVector cpos;
+  PVector mpos;
+  PVector mpos2;
   float blockSize = 30;
   float speed = 4;
   float w;
-  float halfW;
   
   GameObject()
   {
@@ -14,8 +16,10 @@ abstract class GameObject
   GameObject(float x, float y, float w)
   {
     pos = new PVector(x,y);
+    cpos = new PVector(x,y);
+    mpos = new PVector(x,y);
+    mpos2 = new PVector(x,y);
     this.w = w;
-    this.halfW = w * 0.5f; 
   }
   
   abstract void render();

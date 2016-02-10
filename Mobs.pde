@@ -1,40 +1,32 @@
-class Mobs
+class Mobs extends GameObject
 {
+  int radius = 30;
+  int speed = 5;
   
-  float y = size * 0.5;
-  float x1 = size * 0.5;
-  float radius = size;
-  float speed = 2;
-  
-  void render(float x)
+  Mobs()
   {
+    super(105,15,30);
+  }
+  
+  void render()
+  {
+    stroke(0);
+    strokeWeight(1);
     fill(0,0,255);
-    strokeWeight(2);
-    
-    ellipse(x,y,radius,radius);
-    y = y + speed;
-    if(y >= height || y <= 0)
+    ellipse(mpos.x,mpos.y,radius,radius);
+    ellipse(mpos.x + 120,mpos.y,radius,radius);
+    ellipse(mpos.x + 120*2,mpos.y,radius,radius);
+    ellipse(mpos.x + 120*3,mpos.y,radius,radius);
+  }
+  
+  void update()
+  {
+    mpos.y = mpos.y + speed;
+    if( mpos.y >= height || mpos.y <= 0 )
     {
-      speed = speed * -1;
+      speed = speed  * -1;
     }
     
   }
-  
- void update(float y)
-  {
-    fill(0,0,255);
-    strokeWeight(2);
-    
-    ellipse(x1,y,radius,radius);
-    x1 = x1 + speed;
-    if( x1 >= width || x1 <= 0 )
-    {
-      speed = speed * -1;
-    }
-  }
-   
-  
-  
 }
-  
 

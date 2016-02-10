@@ -8,6 +8,9 @@ void setup()
   block = new Block('W','A','S','D');
   gameObjects.add(block);
   mobs = new Mobs();
+  gameObjects.add(mobs);
+  mobsY = new MobsY();
+  gameObjects.add(mobsY);
   
 }
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
@@ -27,10 +30,9 @@ void keyReleased()
 Menu menu;
 Block block;
 Mobs mobs;
+MobsY mobsY;
 
 int size = 30;
-float posMobY = 105;
-
 
 void draw()
 {
@@ -39,16 +41,6 @@ void draw()
   
   drawBackground();
   
-  
-  mobs.update(posMobY);
-  mobs.update(posMobY + size*4);
-  mobs.update(posMobY + size*4*2);
-  mobs.update(posMobY + size*4*3);
-  
-  mobs.render(posMobY);
-  mobs.render(posMobY + size*4);
-  mobs.render(posMobY + size*4*2);
-  mobs.render(posMobY + size*4*3);
   
   if(frameCount % 60 == 0)
   {
