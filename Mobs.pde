@@ -5,6 +5,7 @@ class Mobs
   float x1 = size * 0.5;
   float radius = size;
   float speed = 2;
+  float test = 8;
   
   void render(float x)
   {
