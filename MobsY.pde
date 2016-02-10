@@ -1,11 +1,18 @@
 class MobsY extends GameObject
 {
-  int radius = 30;
   int speed = 5;
   
-  MobsY()
+  MobsY(float x, float y, float scale)
   {
-    super(15,105,30);
+    super(x,y,scale);
+  }
+  
+  void applyTo(Block block)
+  {
+    background(0);
+    fill(0,0,255);
+    text("Game over",width/2,height/2);
+    text("Points = "+points,width/2,height/2+30);
   }
   
   void render()
@@ -13,10 +20,7 @@ class MobsY extends GameObject
     stroke(0);
     strokeWeight(1);
     fill(0,0,255);
-    ellipse(mpos2.x,mpos2.y,radius,radius);
-    ellipse(mpos2.x,mpos2.y + 120,radius,radius);
-    ellipse(mpos2.x,mpos2.y + 120*2,radius,radius);
-    ellipse(mpos2.x,mpos2.y + 120*3,radius,radius);
+    ellipse(mpos2.x,mpos2.y,halfW,halfW);
   }
   
   void update()

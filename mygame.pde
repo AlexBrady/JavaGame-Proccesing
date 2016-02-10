@@ -7,15 +7,29 @@ void setup()
   menu = new Menu();
   block = new Block('W','A','S','D');
   gameObjects.add(block);
-  mobs = new Mobs();
+  mobs = new Mobs(105,15,60);
   gameObjects.add(mobs);
-  mobsY = new MobsY();
+  mobs = new Mobs(225,15,60);
+  gameObjects.add(mobs);
+  mobs = new Mobs(345,15,60);
+  gameObjects.add(mobs);
+  mobs = new Mobs(465,15,60);
+  gameObjects.add(mobs);
+  mobsY = new MobsY(15,105,60);
+  gameObjects.add(mobsY);
+  mobsY = new MobsY(15,225,60);
+  gameObjects.add(mobsY);
+  mobsY = new MobsY(15,345,60);
+  gameObjects.add(mobsY);
+  mobsY = new MobsY(15,465,60);
   gameObjects.add(mobsY);
   
 }
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 
-boolean[] keys = new boolean[512];
+boolean[] keys = new boolean[525];
+
+int screen = 0;
 
 void keyPressed()
 {
@@ -36,29 +50,34 @@ int size = 30;
 
 void draw()
 {
-  //menu.displayMenu();
-  //menu.displayArrow();
-  
-  drawBackground();
-  
-  
-  if(frameCount % 60 == 0)
+  if( screen == 0 )
   {
-    GameObject coins = new Coins();
-    gameObjects.add(coins);
+    menu.displayMenu();
+    menu.displayArrow();
   }
-  
-  for(int i = gameObjects.size() - 1 ; i >= 0   ; i--)
+  if( screen == 1 )
   {
-      
-     GameObject go = gameObjects.get(i);
-     
-     go.update();
-     go.render();
-       
- }// end for
+    drawBackground();
+  
+  
+    if(frameCount % 60 == 0)
+    {
+      GameObject coins = new Coins();
+      gameObjects.add(coins);
+    }
     
-  checkCollisions();
+    for(int i = gameObjects.size() - 1 ; i >= 0   ; i--)
+    {
+        
+       GameObject go = gameObjects.get(i);
+       
+       go.update();
+       go.render();
+         
+   }// end for
+      
+    checkCollisions();
+  }
   
 }
 
@@ -78,6 +97,23 @@ void checkCollisions()
           {
             ((Pickup) other).applyTo((Block)go);
             gameObjects.remove(other);
+          }
+        }
+        
+        
+        if(other instanceof Mobs)
+        {
+          if(go.pos.dist(other.mpos) < go.w + other.halfW)
+          {
+            println("DEAD");
+          }
+        }
+        
+        if(other instanceof MobsY)
+        {
+          if(go.pos.dist(other.mpos2) < go.w + other.halfW)
+          {
+            println("dead");
           }
         }
       }

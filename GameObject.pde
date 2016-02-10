@@ -5,8 +5,10 @@ abstract class GameObject
   PVector mpos;
   PVector mpos2;
   float blockSize = 30;
+  int points = 0;
   float speed = 4;
   float w;
+  float halfW;
   
   GameObject()
   {
@@ -20,6 +22,7 @@ abstract class GameObject
     mpos = new PVector(x,y);
     mpos2 = new PVector(x,y);
     this.w = w;
+    this.halfW = w * 0.5f;
   }
   
   abstract void render();

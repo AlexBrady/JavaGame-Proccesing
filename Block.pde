@@ -5,7 +5,7 @@ class Block extends GameObject
   char left;
   char down;
   char right;
-  int points = 0;
+  //int points = 0;
   
   Block(char up, char left, char down, char right)
   {
